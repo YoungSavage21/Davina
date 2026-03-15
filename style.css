@@ -6,6 +6,10 @@ body {
     background-color: #131316;
 }
 
+.fp-watermark {
+display: none;
+}
+
 * {
     box-sizing: border-box;
 }
