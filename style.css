@@ -1,0 +1,452 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: "Cabin Sketch", cursive !important; 
+    color: white;
+    background-color: #131316;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2{
+    font-weight: 800;
+}
+
+.section{
+    overflow: visible;
+}
+/* ANIMATION */
+
+.hidden-start {
+  opacity: 0;
+}
+
+
+.fade-in {
+  animation: fadeIn 1s forwards;
+}
+
+.slide-up {
+  animation: slideUp 1s forwards;
+}
+
+.slide-right {
+  animation: slideRight 1s both;
+}
+
+.slide-left {
+  animation: slideLeft 1s both;
+}
+
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+@keyframes slideUp {
+  from {
+    opacity:0;
+    transform:translateY(100px);
+  }
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity:0;
+    transform:translateX(-100px);
+  }
+  to {
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity:0;
+    transform:translateX(100px);
+  }
+  to {
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+/* LOGIN FORM */
+
+
+/* CURTAINS */
+
+.curtain {
+    position: fixed;
+    top: 0;
+    width: 50%;
+    height: 100%;
+
+    background:
+        repeating-linear-gradient(90deg,
+            #7a0000 0px,
+            #8b0000 60px,
+            #a40000 120px);
+
+    box-shadow: inset -20px 0 40px rgba(0, 0, 0, 0.6);
+
+    z-index: 5;
+    transition: transform 2s ease;
+}
+
+.left {
+    left: 0;
+    border-right: 3px solid #400000;
+}
+
+.right {
+    right: 0;
+    border-left: 3px solid #400000;
+}
+
+/* LOGIN CARD */
+
+.login-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.login-card {
+    width: 380px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.login-card h1 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.login-card p {
+    color: #bbb;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* INPUT */
+
+.login-card input {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 6px;
+    background: #111;
+    color: white;
+    outline: none;
+    border: 1px solid #333;
+    transition: all 0.2s ease;
+}
+
+.login-card input:focus {
+    border-color: #b30000;
+    box-shadow: 0 0 8px rgba(179, 0, 0, 0.5);
+}
+
+.login-card button {
+
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #b30000;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.login-card button:hover {
+    background: #d10000;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(179, 0, 0, 0.5);
+}
+
+.error {
+    color: #ff4d4d;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* STORY BOARD */
+
+/* HEART */
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity:1;
+  }
+  100% {
+    transform: translateY(-200px) scale(1.5);
+    opacity:0;
+  }
+}
+
+/* SLIDE 2 */
+
+.emojis span:hover {
+  transform: scale(1.5);
+  transition: all 0.4s;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.emojis span {
+  transition: all 0.4s;
+}
+
+/* SLIDE 3 */
+
+.photos{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+.photo{
+  position:relative;
+  padding:10px;
+  border-radius:4px;
+  transition:transform 0.3s;
+}
+
+.photo img{
+  display:block;
+  width:240px;
+  height:auto;
+  border-radius:2px;
+}
+
+/* overlap spacing */
+.photo:not(:first-child){
+  margin-left:-80px;
+}
+
+/* random rotations */
+.photo:nth-child(1){
+  transform:rotate(-7deg);
+  z-index:1;
+}
+
+.photo:nth-child(2){
+  transform:rotate(5deg);
+  z-index:2;
+}
+
+.photo:nth-child(3){
+  transform:rotate(-3deg);
+  z-index:3;
+}
+
+.photo:nth-child(4){
+  transform:rotate(6deg);
+  z-index:1;
+}
+
+.photo {
+    animation-duration: 0.6s;
+    animation-fill-mode: both;
+}
+
+.photos .photo:nth-child(1) img { animation-delay: .25s; }
+.photos .photo:nth-child(2) img { animation-delay: .5s; }
+.photos .photo:nth-child(3) img { animation-delay: .75s; }
+.photos .photo:nth-child(4) img { animation-delay: 1s; }
+
+/* optional hover effect */
+
+.photo{
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+/* when hovering a photo, fade the other ones */
+.photos:has(.photo:hover) .photo:not(:hover){
+  opacity:0.05;
+}
+
+/* hovered photo */
+.photo:hover{
+  opacity:1;
+  transform:scale(1.2) rotate(0deg);
+  z-index:10;
+}
+
+.btn-area {
+    position: relative;
+    height: 150px;
+}
+
+
+
+/* SLIDE 4 */
+
+.emoji-wrapper{
+    position: relative;
+    font-size: 160px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#emoji-pray{
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.25s ease;
+}
+
+#emoji-crazy{
+    position: absolute;
+    opacity: 0;
+    transform: rotate(-15deg) scale(0.8);
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+/* hover effect */
+#emoji-pray:hover{
+    transform: scale(1.15);
+}
+
+/* when clicked */
+.emoji-active #emoji-pray{
+    transform: rotate(15deg) translateX(120px);
+    
+}
+
+.emoji-active #emoji-crazy{
+    opacity: 1;
+    transform: rotate(-25deg) scale(1);
+}
+
+/* Slide 5 */
+
+.message{
+    opacity:0;
+    transition: opacity 0.6s ease;
+    position:absolute;
+    width:100%;
+}
+
+.message.show{
+    opacity:1;
+}
+
+#apology-section{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+/* Slide 6 */
+
+/* Card container */
+.card {
+    opacity: 0;
+    width: 170px;
+    height: 210px;
+    perspective: 1000px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+/* Inner flip wrapper */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Flip on click */
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front & back */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
+
+/* Front */
+.card-front {
+    background: #ffe4e1; /* soft pink */
+    font-size: 32px;
+}
+
+/* Back */
+.card-back {
+    background: #ff4d6d; /* deeper pink/red */
+    color: white;
+    transform: rotateY(180deg);
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.3;
+}
+
+/* Optional: hover scaling effect */
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+/* Slide 7 */
+
+#compliment-word {
+    display: inline-block;
+}
+
+.pop {
+    animation: popAnim 0.35s ease;
+}
+
+@keyframes popAnim {
+    0% { transform: scale(0.7); }
+    60% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
